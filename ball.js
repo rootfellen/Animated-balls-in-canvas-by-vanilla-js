@@ -1,12 +1,13 @@
 /* jshint esversion: 7 */
 /* jshint -W097 */
 // "use strict";
+
 let Ball = function () {
-  this.x = 100;
-  this.y = 100;
+  this.x = 500;
+  this.y = 450;
   this.xSpeed = Math.random() * 10 - 5;
   this.ySpeed = Math.random() * 10 - 5;
-  let colors = ["Red", "Orange", "yellow", "Green", "Blue", "Purple"];
+  let colors = ["Red", "Orange", "grey", "Green", "Blue", "Purple"];
   this.color = randomColor(colors);
 };
 
@@ -47,9 +48,13 @@ let ctx = canvas.getContext("2d");
 let width = canvas.width;
 let height = canvas.height;
 
+let randomxLocation = Math.random() * width;
+let randomyLocation = Math.random() * height;
+console.log(randomxLocation);
+
 let balls = [];
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 1000; i++) {
   balls[i] = new Ball();
 }
 setInterval(function () {
